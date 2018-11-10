@@ -16,6 +16,7 @@ public enum TextMode {
     case large
     case normal
     case small
+    case narrowDayWeek
 }
 
 /**

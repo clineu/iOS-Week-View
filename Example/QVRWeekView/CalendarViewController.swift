@@ -9,7 +9,7 @@
 import QVRWeekView
 import UIKit
 
-public var autoFillEvents = true
+public var autoFillEvents = false
 
 class CalendarViewController: UIViewController, WeekViewDelegate {
 
@@ -45,20 +45,20 @@ class CalendarViewController: UIViewController, WeekViewDelegate {
                                       message: nil,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Short Gradient", style: .default, handler: { _ in
-            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.5)
+            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0)
             let newEvent = EventData(id: self.id,
                                      title: "Test Event \(self.id)",
                                      startDate: date,
                                      endDate: date.addingTimeInterval(60*60*1),
                                      location: "loc test",
                                      color: color)
-            newEvent.configureGradient(UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.5))
+            newEvent.configureGradient(UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0))
             self.allEvents[self.id] = newEvent
             self.id += 1
             weekView.loadEvents(withData: Array(self.allEvents.values))
         }))
         alert.addAction(UIAlertAction(title: "Short", style: .default, handler: { _ in
-            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.5)
+            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0)
             let newEvent = EventData(id: self.id,
                                      title: "Test Event \(self.id)",
                                      startDate: date,
@@ -70,7 +70,7 @@ class CalendarViewController: UIViewController, WeekViewDelegate {
             weekView.loadEvents(withData: Array(self.allEvents.values))
         }))
         alert.addAction(UIAlertAction(title: "Medium", style: .default, handler: { _ in
-            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.5)
+            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0)
             let newEvent = EventData(id: self.id,
                                      title: "Test Event \(self.id)",
                                      startDate: date,
@@ -82,7 +82,7 @@ class CalendarViewController: UIViewController, WeekViewDelegate {
             weekView.loadEvents(withData: Array(self.allEvents.values))
         }))
         alert.addAction(UIAlertAction(title: "Long", style: .default, handler: { _ in
-            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.5)
+            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0)
             let newEvent = EventData(id: self.id,
                                      title: "Test Event \(self.id)",
                                      startDate: date,
@@ -94,7 +94,7 @@ class CalendarViewController: UIViewController, WeekViewDelegate {
             weekView.loadEvents(withData: Array(self.allEvents.values))
         }))
         alert.addAction(UIAlertAction(title: "Very long", style: .default, handler: { _ in
-            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.5)
+            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0)
             let newEvent = EventData(
                 id: self.id,
                 title: "Test Event \(self.id)",
@@ -108,7 +108,7 @@ class CalendarViewController: UIViewController, WeekViewDelegate {
             weekView.loadEvents(withData: Array(self.allEvents.values))
         }))
         alert.addAction(UIAlertAction(title: "Single all day", style: .default, handler: { _ in
-            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.5)
+            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0)
             let newEvent = EventData(
                 id: self.id,
                 title: "Test Event \(self.id)",
@@ -123,7 +123,7 @@ class CalendarViewController: UIViewController, WeekViewDelegate {
             weekView.loadEvents(withData: Array(self.allEvents.values))
         }))
         alert.addAction(UIAlertAction(title: "Multi all day", style: .default, handler: { _ in
-            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.5)
+            let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0)
             let newEvent = EventData(
                 id: self.id,
                 title: "Test Event \(self.id)",
@@ -151,7 +151,7 @@ class CalendarViewController: UIViewController, WeekViewDelegate {
         alert.addAction(UIAlertAction(title: "Change color", style: .default, handler: { (_) in
             let id = Int(eventId)!
             let event = self.allEvents[id]!
-            let newEvent = event.remakeEventData(withColor: UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.5))
+            let newEvent = event.remakeEventData(withColor: UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0))
             self.allEvents[id] = newEvent
             weekView.loadEvents(withData: Array(self.allEvents.values))
         }))
@@ -200,7 +200,7 @@ class CalendarViewController: UIViewController, WeekViewDelegate {
                     let end = dateWithInterval(eventEndOffset, fromDate: startOfDate)
 
                     let title = "Test+\(id):TextTest TextTest TextTest TextTest TextTest"
-                    let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.5)
+                    let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0)
 
                     let data = EventData(id: id, title: title, startDate: start, endDate: end, color: color)
                     allEvents[id] = data

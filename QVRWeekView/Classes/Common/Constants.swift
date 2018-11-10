@@ -18,14 +18,22 @@ struct LayoutDefaults {
 
     // Default font of day labels
     static let dayLabelFont = UIFont.boldSystemFont(ofSize: 14)
-    // Default text color of day labels
+    // Text color for passed days labels
+    static let passedDayLabelTextColor = UIColor.lightGray
+    // Text color for all days that are not today and not passed
     static let dayLabelTextColor = UIColor.black
-    // Text color of today day label
+    // Text color for today day labels
     static let dayLabelTodayTextColor = UIColor(red: 20/255, green: 66/255, blue: 111/255, alpha: 1.0)
+    // Background label color for passed days labels
+    static let passedDayLabelBackgroundColor = UIColor.clear
+    // Background label color for all days that are not today and not passed
+    static let dayLabelBackgroundColor = UIColor.clear
+    // Background label color for today day labels
+    static let dayLabelTodayBackgroundColor = UIColor.clear
     // Default minimum event label scaling
     static let dayLabelMinimumFontSize = CGFloat(8)
     // Date formats for day labels
-    static let dayLabelDateFormats: [TextMode: String] = [.large: "E d MMM y", .normal: "E d MMM", .small: "d MMM"]
+    static let dayLabelDateFormats: [TextMode: String] = [.large: "E d MMM y", .normal: "E d MMM", .small: "d MMM", .narrowDayWeek: "EEEEE"]
 
     // Default font of hour labels
     static let hourLabelFont = UIFont.boldSystemFont(ofSize: 12)

@@ -13,13 +13,12 @@ import Foundation
 struct Util {
 
     // Function returns a dayLabel UILabel with the correct size and position according to given indexPath.
-    static func makeDayLabel(withIndexPath indexPath: IndexPath) -> UILabel {
+    static func makeDayLabel(withIndexPath indexPath: IndexPath) -> WeekDayView {
 
         // Make as daylabel
-        let labelFrame = Util.generateDayLabelFrame(forIndex: indexPath)
-        let dayLabel = UILabel(frame: labelFrame)
-        dayLabel.textAlignment = .center
-        return dayLabel
+        let frame = Util.generateDayLabelFrame(forIndex: indexPath)
+        let dayView = WeekDayView(frame: frame)
+        return dayView
     }
 
     /**

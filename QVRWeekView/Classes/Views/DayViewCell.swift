@@ -102,10 +102,11 @@ class DayViewCell: UICollectionViewCell, CAAnimationDelegate {
     func updateTimeView() {
         if date.isToday() {
             self.overlayView.isHidden = false
+            self.bottomDistancePercent = DateSupport.getPercentTodayPassed()
             if LayoutVariables.todayViewColor == LayoutVariables.defaultDayViewColor {
-                self.bottomDistancePercent = DateSupport.getPercentTodayPassed()
                 self.backgroundColor = date.isWeekend() ? LayoutVariables.weekendDayViewColor : LayoutVariables.defaultDayViewColor
             } else {
+                self.overlayView.backgroundColor = LayoutVariables.todayViewColor
                 self.backgroundColor = LayoutVariables.todayViewColor
             }
         } else {
@@ -155,7 +156,7 @@ class DayViewCell: UICollectionViewCell, CAAnimationDelegate {
                                        y: 0,
                                        width: self.bounds.width,
                                        height: bottomDistancePercent*self.bounds.height)
-            overlayView.backgroundColor = date.isWeekend() ? LayoutVariables.passedWeekendDayViewColor : LayoutVariables.passedDayViewColor
+            //overlayView.backgroundColor = date.isWeekend() ? LayoutVariables.passedWeekendDayViewColor : LayoutVariables.passedDayViewColor
             hourIndicatorView.frame = CGRect(x: 0,
                                              y: overlayView.frame.height-LayoutVariables.hourIndicatorThickness/2,
                                              width: self.bounds.width,

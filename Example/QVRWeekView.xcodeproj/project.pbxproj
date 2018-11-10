@@ -135,7 +135,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				2BA5DBBCB7F4308CC573BF0E /* [CP] Embed Pods Frameworks */,
-				E738FDF4BC1FE789763FA8E3 /* [CP] Copy Pods Resources */,
 				9118F5301F2889890055371E /* ShellScript */,
 			);
 			buildRules = (
@@ -159,7 +158,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = PSR2LD68KY;
+						DevelopmentTeam = 7NQ5HK85V8;
 						LastSwiftMigration = 0900;
 					};
 				};
@@ -244,22 +243,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint --path \"$SRCROOT\"/..\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		E738FDF4BC1FE789763FA8E3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QVRWeekView_Example/Pods-QVRWeekView_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint --path \"$SRCROOT\"/..\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -404,7 +388,7 @@
 			baseConfigurationReference = A778E5177EE518E5FF85E4C3 /* Pods-QVRWeekView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PSR2LD68KY;
+				DEVELOPMENT_TEAM = 7NQ5HK85V8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -423,7 +407,7 @@
 			baseConfigurationReference = 151BE1390A46AE4302D3E07B /* Pods-QVRWeekView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PSR2LD68KY;
+				DEVELOPMENT_TEAM = 7NQ5HK85V8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -40,11 +40,11 @@ open class WeekView: UIView {
     // The actual view being displayed, all other views are subview of this mainview
     private(set) var mainView: UIView!
     // Array of visible daylabels
-    private var visibleDayLabels: [DayDate: UILabel] = [:]
+    private var visibleDayLabels: [DayDate: WeekDayView] = [:]
     // Array of visible allDayEvents
     private var visibleAllDayEvents: [DayDate: [EventData: CAShapeLayer]] = [:]
     // Array of labels not being displayed
-    private var discardedDayLabels: [UILabel] = []
+    private var discardedDayLabels: [WeekDayView] = []
     // Left side buffer for top bar
     private var topBarLeftBuffer: CGFloat = 0
     // Top side buffer for side bar
@@ -238,17 +238,17 @@ open class WeekView: UIView {
      */
     func addDayLabel(forIndexPath indexPath: IndexPath, withDate dayDate: DayDate) {
 
-        var label: UILabel!
+        var dayView: WeekDayView!
         if !discardedDayLabels.isEmpty {
-            label = discardedDayLabels.remove(at: 0)
-            label.frame = Util.generateDayLabelFrame(forIndex: indexPath)
+            dayView = discardedDayLabels.remove(at: 0)
+            dayView.frame = Util.generateDayLabelFrame(forIndex: indexPath)
         }
         else {
-            label = Util.makeDayLabel(withIndexPath: indexPath)
+            dayView = Util.makeDayLabel(withIndexPath: indexPath)
         }
-        updateDayLabel(label, withDate: dayDate)
-        visibleDayLabels[dayDate] = label
-        self.topBarView.addSubview(label)
+        updateDayLabel(dayView, withDate: dayDate)
+        visibleDayLabels[dayDate] = dayView
+        self.topBarView.addSubview(dayView)
     }
 
     /**
@@ -399,13 +399,12 @@ open class WeekView: UIView {
     /**
      Method updates a day labels font, text color and also performs a text assignment resize check.
      */
-    private func updateDayLabel(_ dayLabel: UILabel, withDate dayDate: DayDate) {
-        dayLabel.font = TextVariables.dayLabelCurrentFont
-        dayLabel.textColor = dayDate == DayDate.today ? TextVariables.dayLabelTodayTextColor : TextVariables.dayLabelTextColor
-        if let newFontSize = Util.assignTextAndResizeFont(forLabel: dayLabel, andDate: dayDate) {
-            TextVariables.dayLabelCurrentFontSize = newFontSize
-            updateVisibleDayLabels()
-        }
+    private func updateDayLabel(_ dayView: WeekDayView, withDate dayDate: DayDate) {
+        dayView.date = dayDate
+//        if let newFontSize = Util.assignTextAndResizeFont(forLabel: dayLabel, andDate: dayDate) {
+//            TextVariables.dayLabelCurrentFontSize = newFontSize
+//            updateVisibleDayLabels()
+//        }
     }
 
     /**

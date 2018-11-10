@@ -103,7 +103,17 @@ public extension WeekView {
             updateVisibleLabelsAndMainConstraints()
         }
     }
-
+    
+    public var passedDayLabelTextColor: UIColor {
+        get {
+            return TextVariables.passedDayLabelTextColor
+        }
+        set(color) {
+            TextVariables.passedDayLabelTextColor = color
+            updateVisibleLabelsAndMainConstraints()
+        }
+    }
+    
     /**
      Text color for today day label contained in the top bar.
      */
@@ -113,6 +123,36 @@ public extension WeekView {
         }
         set(color) {
             TextVariables.dayLabelTodayTextColor = color
+            updateVisibleLabelsAndMainConstraints()
+        }
+    }
+    
+    public var passedDayLabelBackgroundColor: UIColor {
+        get {
+            return TextVariables.passedDayLabelBackgroundColor
+        }
+        set(color) {
+            TextVariables.passedDayLabelBackgroundColor = color
+            updateVisibleLabelsAndMainConstraints()
+        }
+    }
+    
+    public var dayLabelBackgroundColor: UIColor {
+        get {
+            return TextVariables.dayLabelBackgroundColor
+        }
+        set(color) {
+            TextVariables.dayLabelBackgroundColor = color
+            updateVisibleLabelsAndMainConstraints()
+        }
+    }
+    
+    public var dayLabelTodayBackgroundColor: UIColor {
+        get {
+            return TextVariables.dayLabelTodayBackgroundColor
+        }
+        set(color) {
+            TextVariables.dayLabelTodayBackgroundColor = color
             updateVisibleLabelsAndMainConstraints()
         }
     }
@@ -734,10 +774,18 @@ extension TextVariables {
             updateDayLabelCurrentFont()
         }
     }
-    // Text color for all day labels
+    // Text color for passed days labels
+    fileprivate(set) static var passedDayLabelTextColor = LayoutDefaults.passedDayLabelTextColor
+    // Text color for all days that are not today and not passed
     fileprivate(set) static var dayLabelTextColor = LayoutDefaults.dayLabelTextColor
     // Text color for today day labels
     fileprivate(set) static var dayLabelTodayTextColor = LayoutDefaults.dayLabelTodayTextColor
+    // Background label color for passed days labels
+    fileprivate(set) static var passedDayLabelBackgroundColor = LayoutDefaults.passedDayLabelBackgroundColor
+    // Background label color for all days that are not today and not passed
+    fileprivate(set) static var dayLabelBackgroundColor = LayoutDefaults.dayLabelBackgroundColor
+    // Background label color for today day labels
+    fileprivate(set) static var dayLabelTodayBackgroundColor = LayoutDefaults.dayLabelTodayBackgroundColor
     // Minimum font for all day labels
     fileprivate(set) static var dayLabelMinimumFontSize = LayoutDefaults.dayLabelMinimumFontSize
     // Date formats for day labels
