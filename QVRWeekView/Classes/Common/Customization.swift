@@ -64,6 +64,21 @@ public extension WeekView {
             self.sideBarView.backgroundColor = color
         }
     }
+    
+    /**
+     Color of the side bar right border.
+     */
+    public var sideBarSeparatorColor: UIColor {
+        get {
+            return (self.sideBarView as? HourSideBarView)?.separatorView.backgroundColor ?? .clear
+        }
+        set(color) {
+            let sidebarView = sideBarView.subviews
+                    .first { $0 is HourSideBarView }
+                    .flatMap { $0 as? HourSideBarView }
+            sidebarView?.separatorView.backgroundColor = color
+        }
+    }
 
     /**
      Width of the side bar containing hour labels.

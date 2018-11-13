@@ -8,6 +8,7 @@ import UIKit
 class HourSideBarView: UIView {
 
     @IBOutlet var hourLabels: [HourLabel]!
+    @IBOutlet weak var separatorView: UIView!
     var view: UIView?
 
     required init?(coder aDecoder: NSCoder) {

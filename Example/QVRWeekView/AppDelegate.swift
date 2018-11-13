@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let appearance = UINavigationBar.appearance()
+        appearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        appearance.tintColor = UIColor.white
+        if #available(iOS 11.0, *) {
+            appearance.barTintColor = UIColor(named: "Theme")
+        } else {
+            // Fallback on earlier versions
+        }
+        appearance.isTranslucent = false
+        appearance.shadowImage = UIImage()
+        
         return true
     }
 

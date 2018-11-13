@@ -41,7 +41,6 @@ class WeekDayView: UIView {
         let bundle = Bundle(for: WeekDayView.self)
         let nib = UINib(nibName: "WeekDayView", bundle: bundle)
         mainView = nib.instantiate(withOwner: self, options: nil).first as? UIView
-        backgroundColor = UIColor.clear
         guard mainView != nil else {
             return
         }
@@ -62,14 +61,17 @@ class WeekDayView: UIView {
             dayColor = TextVariables.dayLabelTodayTextColor
             weekDayColor = TextVariables.dayLabelTextColor
             backgroundColor = TextVariables.dayLabelTodayBackgroundColor
+            mainView.backgroundColor = LayoutVariables.todayViewColor
         } else if date.hasPassed() {
             dayColor = TextVariables.passedDayLabelTextColor
             weekDayColor = dayColor
             backgroundColor = TextVariables.passedDayLabelBackgroundColor
+            mainView.backgroundColor = LayoutVariables.defaultDayViewColor
         } else {
             dayColor = TextVariables.dayLabelTextColor
             weekDayColor = dayColor
             backgroundColor = TextVariables.dayLabelBackgroundColor
+            mainView.backgroundColor = LayoutVariables.defaultDayViewColor
         }
         dayLabel.textColor = dayColor
         weekDaylabel.textColor = weekDayColor

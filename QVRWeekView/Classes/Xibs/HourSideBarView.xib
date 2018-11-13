@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HourSideBarView" customModule="QVRWeekView" customModuleProvider="target">
             <connections>
+                <outlet property="separatorView" destination="w5L-02-iD3" id="Lnn-pA-hiL"/>
                 <outletCollection property="hourLabels" destination="H70-qF-c97" collectionClass="NSMutableArray" id="1ap-hd-fRo"/>
                 <outletCollection property="hourLabels" destination="yYQ-bT-gbh" collectionClass="NSMutableArray" id="5xK-Xr-Aml"/>
                 <outletCollection property="hourLabels" destination="4sB-2I-BiS" collectionClass="NSMutableArray" id="4Uq-og-gcp"/>
@@ -42,6 +43,13 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5L-02-iD3">
+                    <rect key="frame" x="374.5" y="-1000" width="0.5" height="2667"/>
+                    <color key="backgroundColor" red="0.49803921569999998" green="0.2470588235" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="0.5" id="f0x-ES-FDA"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CIp-kM-gSC">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
@@ -343,7 +351,10 @@
                 <constraint firstItem="CIp-kM-gSC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Hom-7b-dT1"/>
                 <constraint firstItem="CIp-kM-gSC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="N2x-Uy-k3I"/>
                 <constraint firstItem="CIp-kM-gSC" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Uwr-mL-uCQ"/>
+                <constraint firstItem="w5L-02-iD3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-1000" id="gWg-an-qIx"/>
+                <constraint firstAttribute="bottom" secondItem="w5L-02-iD3" secondAttribute="bottom" constant="-1000" id="r7c-9n-wcy"/>
                 <constraint firstAttribute="bottom" secondItem="CIp-kM-gSC" secondAttribute="bottom" id="uBz-wg-9NQ"/>
+                <constraint firstAttribute="trailing" secondItem="w5L-02-iD3" secondAttribute="trailing" id="vZP-R6-LpN"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
