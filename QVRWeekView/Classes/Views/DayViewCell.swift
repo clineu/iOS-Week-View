@@ -136,7 +136,7 @@ class DayViewCell: UICollectionViewCell, CAAnimationDelegate {
         self.generateEventLayers(andResizeText: TextVariables.eventLabelFontResizingEnabled)
     }
 
-    func tapAction(_ sender: UITapGestureRecognizer) {
+    @objc func tapAction(_ sender: UITapGestureRecognizer) {
         let tapPoint = sender.location(in: self)
         for (id, frame) in eventFrames {
             if frame.contains(tapPoint) && eventsData[id] != nil {
@@ -254,7 +254,7 @@ class DayViewCell: UICollectionViewCell, CAAnimationDelegate {
         }
     }
 
-    func longPressAction(_ sender: UILongPressGestureRecognizer) {
+    @objc func longPressAction(_ sender: UILongPressGestureRecognizer) {
         guard !self.addingEvent else {
             return
         }
@@ -289,7 +289,8 @@ class DayViewCell: UICollectionViewCell, CAAnimationDelegate {
 
         let textLayer = CATextLayer()
         textLayer.frame = endingBounds
-        let mainFontAttributes: [String: Any] = [NSFontAttributeName: TextVariables.eventLabelFont, NSForegroundColorAttributeName: TextVariables.eventLabelTextColor.cgColor]
+        let mainFontAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: TextVariables.eventLabelFont,
+                                                                NSAttributedStringKey.foregroundColor: TextVariables.eventLabelTextColor.cgColor]
         let mainAttributedString = NSMutableAttributedString(string: LayoutVariables.previewEventText, attributes: mainFontAttributes)
         textLayer.string = mainAttributedString
         textLayer.isWrapped = true

@@ -52,12 +52,12 @@ struct Util {
         let currentFont = label.font!
         let labelWidth = label.frame.width
         var possibleText = dayDate.getString(forMode: TextVariables.dayLabelTextMode) as NSString
-        var textSize = possibleText.size(attributes: [NSFontAttributeName: currentFont])
+        var textSize = possibleText.size(withAttributes: [NSAttributedStringKey.font: currentFont])
 
         label.text = possibleText as String
         if textSize.width > labelWidth && TextVariables.dayLabelTextMode != .small {
             possibleText = dayDate.defaultString as NSString
-            textSize = possibleText.size(attributes: [NSFontAttributeName: currentFont])
+            textSize = possibleText.size(withAttributes: [NSAttributedStringKey.font: currentFont])
             if textSize.width <= labelWidth {
                 label.text = possibleText as String
                 TextVariables.dayLabelTextMode = .normal
@@ -66,7 +66,7 @@ struct Util {
                 let scale = (labelWidth / textSize.width)
                 var newFont = currentFont.withSize(floor(currentFont.pointSize*scale))
 
-                while possibleText.size(attributes: [NSFontAttributeName: newFont]).width > labelWidth && newFont.pointSize > TextVariables.dayLabelMinimumFontSize {
+                while possibleText.size(withAttributes: [NSAttributedStringKey.font: newFont]).width > labelWidth && newFont.pointSize > TextVariables.dayLabelMinimumFontSize {
                     newFont = newFont.withSize(newFont.pointSize-0.25)
                 }
 
@@ -75,7 +75,7 @@ struct Util {
                 }
 
                 label.font = newFont
-                if possibleText.size(attributes: [NSFontAttributeName: newFont]).width > labelWidth {
+                if possibleText.size(withAttributes: [NSAttributedStringKey.font: newFont]).width > labelWidth {
                     label.text = dayDate.smallString
                     TextVariables.dayLabelTextMode = .small
                 }
@@ -123,7 +123,7 @@ struct Util {
     }
 
     static func getSize(ofString string: String, withFont font: UIFont, inFrame frame: CGRect) -> CGRect {
-        let text = NSAttributedString(string: string, attributes: [NSFontAttributeName: font])
+        let text = NSAttributedString(string: string, attributes: [NSAttributedStringKey.font: font])
         return text.boundingRect(with: CGSize(width: frame.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, context: nil)
     }
 

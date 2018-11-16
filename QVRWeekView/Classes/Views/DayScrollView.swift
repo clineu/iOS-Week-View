@@ -112,7 +112,7 @@ UICollectionViewDelegate, UICollectionViewDataSource, DayViewCellDelegate, Frame
 
     // MARK: - GESTURE, SCROLL & DATA SOURCE FUNCTIONS -
 
-    func tap(_ sender: UITapGestureRecognizer) {
+    @objc func tap(_ sender: UITapGestureRecognizer) {
 
         if !self.dayCollectionView.isDragging && !self.dayCollectionView.isDecelerating {
             scrollToNearestCell()

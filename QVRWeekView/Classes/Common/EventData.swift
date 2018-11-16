@@ -159,11 +159,13 @@ open class EventData: CustomStringConvertible, Equatable, Hashable {
     /**
      Returns the string that will be displayed by this event. Overridable.
      */
-    open func getDisplayString(withMainFont mainFont: UIFont = TextVariables.eventLabelFont, andInfoFont infoFont: UIFont = TextVariables.eventLabelInfoFont) -> NSAttributedString {
+    open func getDisplayString(withMainFont mainFont: UIFont? = nil, andInfoFont infoFont: UIFont? = nil) -> NSAttributedString {
+        let mainFont = mainFont ?? TextVariables.eventLabelFont
+        let infoFont = infoFont ?? TextVariables.eventLabelInfoFont
         let df = DateFormatter()
         df.dateFormat = "HH:mm"
-        let mainFontAttributes: [String: Any] = [NSFontAttributeName: mainFont, NSForegroundColorAttributeName: self.titleColor.cgColor]
-        let infoFontAttributes: [String: Any] = [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: self.titleColor.cgColor]
+        let mainFontAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: mainFont, NSAttributedStringKey.foregroundColor: self.titleColor.cgColor]
+        let infoFontAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: infoFont, NSAttributedStringKey.foregroundColor: self.titleColor.cgColor]
         let mainAttributedString = NSMutableAttributedString(string: self.title, attributes: mainFontAttributes)
         if !self.allDay && showEventTime {
             var startShow = self.startDate
