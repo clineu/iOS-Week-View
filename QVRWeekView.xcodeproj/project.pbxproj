@@ -30,6 +30,8 @@
 		64A1636F202AFD80002FEF01 /* CalendarWeekView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A16366202AFD7F002FEF01 /* CalendarWeekView.framework */; };
 		64A16374202AFD80002FEF01 /* CalendarWeekViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A16373202AFD80002FEF01 /* CalendarWeekViewTests.swift */; };
 		64A16376202AFD80002FEF01 /* CalendarWeekView.h in Headers */ = {isa = PBXBuildFile; fileRef = 64A16368202AFD80002FEF01 /* CalendarWeekView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD7429F1219F2C450054BD05 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7429F0219F2C450054BD05 /* EventData.swift */; };
+		AD7429F3219F2C540054BD05 /* HourLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7429F2219F2C540054BD05 /* HourLabel.swift */; };
 		ADDC08D521974711007BCBED /* WeekDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADDC08D421974710007BCBED /* WeekDayView.xib */; };
 		ADDC08D72197471A007BCBED /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC08D62197471A007BCBED /* WeekDayView.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +84,8 @@
 		64A1636E202AFD80002FEF01 /* CalendarWeekViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarWeekViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A16373202AFD80002FEF01 /* CalendarWeekViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeekViewTests.swift; sourceTree = "<group>"; };
 		64A16375202AFD80002FEF01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD7429F0219F2C450054BD05 /* EventData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		AD7429F2219F2C540054BD05 /* HourLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourLabel.swift; sourceTree = "<group>"; };
 		ADDC08D421974710007BCBED /* WeekDayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekDayView.xib; sourceTree = "<group>"; };
 		ADDC08D62197471A007BCBED /* WeekDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +191,8 @@
 		64988F262029D68000C1A3BF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AD7429F0219F2C450054BD05 /* EventData.swift */,
+				AD7429F2219F2C540054BD05 /* HourLabel.swift */,
 				64988F272029D68000C1A3BF /* Constants.swift */,
 				64988F282029D68000C1A3BF /* Period.swift */,
 				64988F292029D68000C1A3BF /* FrameCalculator.swift */,
@@ -424,11 +430,13 @@
 			files = (
 				64988F452029D68000C1A3BF /* DayScrollView.swift in Sources */,
 				64988F472029D68000C1A3BF /* DayCollectionView.swift in Sources */,
+				AD7429F1219F2C450054BD05 /* EventData.swift in Sources */,
 				64988F412029D68000C1A3BF /* Extensions.swift in Sources */,
 				64988F492029D68000C1A3BF /* DayViewCell.swift in Sources */,
 				64988F482029D68000C1A3BF /* HourSideBarView.swift in Sources */,
 				64988F3F2029D68000C1A3BF /* FrameCalculator.swift in Sources */,
 				64988F3E2029D68000C1A3BF /* Period.swift in Sources */,
+				AD7429F3219F2C540054BD05 /* HourLabel.swift in Sources */,
 				64988F3D2029D68000C1A3BF /* Constants.swift in Sources */,
 				ADDC08D72197471A007BCBED /* WeekDayView.swift in Sources */,
 				64988F442029D68000C1A3BF /* DayDate.swift in Sources */,

@@ -25,7 +25,7 @@ class TestWeekView: WeekView {
         sideBarSeparatorColor = UIColor(red: 0.92, green: 0.9, blue: 0.92, alpha: 1)
         topBarColor = UIColor(red: 249.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0)
         hourLabelTextColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
-        hourLabelFont = UIFont.systemFont(ofSize: 10, weight: UIFontWeightRegular)
+        hourLabelFont = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.regular)
         //Day view separator
         dayViewMainSeparatorColor = UIColor(red: 0.92, green: 0.9, blue: 0.92, alpha: 1)
         dayViewMainSeparatorThickness = 0.5
